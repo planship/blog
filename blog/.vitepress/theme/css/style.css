@@ -1,0 +1,503 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *   It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *   top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *   on top of it.
+ *
+ *   The soft color must be semi transparent alpha channel. This is crucial
+ *   because it allows adding multiple "soft" colors on top of each other
+ *   to create a accent, such as when having inline code block inside
+ *   custom containers.
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attched to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ * -------------------------------------------------------------------------- */
+
+ @layer base {
+  :root {
+    --color-white: #fff4ee;
+    --color-black: #192c3c;
+
+    /* Seashell - 50 is base */
+    --seashell-peach: #fff4ee;
+    --seashell-peach-50: 255 244 238;
+    --seashell-peach-100: 255 228 213;
+    --seashell-peach-200: 254 198 170;
+    --seashell-peach-300: 253 158 116;
+    --seashell-peach-400: 251 107 60;
+    --seashell-peach-500: 249 69 22;
+    --seashell-peach-600: 234 43 12;
+    --seashell-peach-700: 194 28 12;
+    --seashell-peach-800: 154 24 18;
+    --seashell-peach-900: 124 24 18;
+    --seashell-peach-950: 67 8 7;
+
+    /* Sunset orange - 500 is base */
+    --sunset-orange-50: 255 242 241;
+    --sunset-orange-100: 255 224 223;
+    --sunset-orange-200: 255 199 197;
+    --sunset-orange-300: 255 161 157;
+    --sunset-orange-400: 255 106 100;
+    --sunset-orange-500: 255 81 74;
+    --sunset-orange-600: 237 29 21;
+    --sunset-orange-700: 200 20 13;
+    --sunset-orange-800: 165 21 15;
+    --sunset-orange-900: 136 24 20;
+    --sunset-orange-950: 75 7 4;
+
+    /* Shamrock - 400 is base */
+    --shamrock: #53d4a4;
+    --shamrock-50: 237 252 245;
+    --shamrock-100: 210 249 229;
+    --shamrock-200: 170 240 207;
+    --shamrock-300: 114 227 181;
+    --shamrock-400: 83 212 164;
+    --shamrock-500: 22 179 126;
+    --shamrock-600: 10 145 102;
+    --shamrock-700: 8 116 84;
+    --shamrock-800: 9 92 68;
+    --shamrock-900: 8 76 58;
+    --shamrock-950: 3 43 33;
+
+    /* Big stone - 950 is base */
+    --big-stone: #192c3c;
+    --big-stone-50: 244 248 251;
+    --big-stone-100: 231 240 247;
+    --big-stone-200: 202 223 237;
+    --big-stone-300: 156 196 221;
+    --big-stone-400: 103 165 201;
+    --big-stone-500: 67 139 180;
+    --big-stone-600: 50 111 151;
+    --big-stone-700: 41 89 123;
+    --big-stone-800: 38 76 102;
+    --big-stone-900: 36 65 86;
+    --big-stone-950: 25 44 60;
+
+    /* Jordy blue - 400 is base */
+    --jordy-blue: #65b5f9;
+    --jordy-blue-50: 239 247 255;
+    --jordy-blue-100: 219 237 254;
+    --jordy-blue-200: 191 225 254;
+    --jordy-blue-300: 148 207 252;
+    --jordy-blue-400: 101 181 249;
+    --jordy-blue-500: 60 147 245;
+    --jordy-blue-600: 38 118 234;
+    --jordy-blue-700: 30 96 215;
+    --jordy-blue-800: 31 78 174;
+    --jordy-blue-900: 31 68 137;
+    --jordy-blue-950: 23 43 84;
+
+    /* Creole - 950 is base */
+    --creole: #190900;
+    --creole-50: 255 252 230;
+    --creole-100: 255 249 189;
+    --creole-200: 255 240 126;
+    --creole-300: 255 221 53;
+    --creole-400: 255 199 0;
+    --creole-500: 255 172 0;
+    --creole-600: 222 129 0;
+    --creole-700: 176 88 0;
+    --creole-800: 145 68 2;
+    --creole-900: 122 55 9;
+    --creole-950: 25 9 0;
+  }
+}
+
+/**
+ * Colors: Solid
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-white: var(--color-white);
+  --vp-c-black: var(--color-black);
+
+  --vp-c-neutral: var(--vp-c-black);
+  --vp-c-neutral-inverse: var(--vp-c-white);
+}
+
+.dark {
+  --vp-c-neutral: var(--vp-c-white);
+  --vp-c-neutral-inverse: var(--vp-c-black);
+}
+
+/**
+ * Colors: Palette
+ *
+ * The primitive colors used for accent colors. These colors are referenced
+ * by functional colors such as "Text", "Background", or "Brand".
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *    It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *    top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *    or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *    on top of it.
+ *
+ *    The soft color must be semi transparent alpha channel. This is crucial
+ *    because it allows adding multiple "soft" colors on top of each other
+ *    to create a accent, such as when having inline code block inside
+ *    custom containers.
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-gray-1: var(--big-stone-400);
+  --vp-c-gray-2: #e4e4e9;
+  --vp-c-gray-3: #ebebef;
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+
+  --vp-c-indigo-1: var(--jordy-blue-500);
+  --vp-c-indigo-2: var(--jordy-blue-700);
+  --vp-c-indigo-3: var(--jordy-blue-600);
+  --vp-c-indigo-soft: var(--jordy-blue-600) / .5;
+
+  --vp-c-green-1: #18794e;
+  --vp-c-green-2: #299764;
+  --vp-c-green-3: #30a46c;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
+
+  --vp-c-yellow-1: #915930;
+  --vp-c-yellow-2: #946300;
+  --vp-c-yellow-3: #9f6a00;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
+
+  --vp-c-red-1: #b8272c;
+  --vp-c-red-2: #d5393e;
+  --vp-c-red-3: #e0575b;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.14);
+
+  --vp-c-sponsor: #db2777;
+}
+
+.dark {
+  --vp-c-gray-1: #515c67;
+  --vp-c-gray-2: #414853;
+  --vp-c-gray-3: #32363f;
+  --vp-c-gray-soft: rgba(101, 117, 133, 0.16);
+
+  --vp-c-indigo-1: #a8b1ff;
+  --vp-c-indigo-2: #5c73e7;
+  --vp-c-indigo-3: #3e63dd;
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.16);
+
+  --vp-c-green-1: #3dd68c;
+  --vp-c-green-2: #30a46c;
+  --vp-c-green-3: #298459;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.16);
+
+  --vp-c-yellow-1: #f9b44e;
+  --vp-c-yellow-2: #da8b17;
+  --vp-c-yellow-3: #a46a0a;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.16);
+
+  --vp-c-red-1: #f66f81;
+  --vp-c-red-2: #f14158;
+  --vp-c-red-3: #b62a3c;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.16);
+}
+
+/**
+ * Colors: Background
+ *
+ * - `bg`: The bg color used for main screen.
+ *
+ * - `bg-alt`: The alternative bg color used in places such as "sidebar",
+ *   or "code block".
+ *
+ * - `bg-elv`: The elevated bg color. This is used at parts where it "floats",
+ *   such as "dialog".
+ *
+ * - `bg-soft`: The bg color to slightly distinguish some components from
+ *   the page. Used for things like "carbon ads" or "table".
+ * -------------------------------------------------------------------------- */
+ :root {
+  --vp-c-bg: rgb(var(--seashell-peach-50));
+  --vp-c-bg-alt: rgb(var(--jordy-blue-50) / 0.75);
+  --vp-c-bg-elv: rgb(var(--seashell-peach-50));
+  --vp-c-bg-soft: rgb(var(--jordy-blue-50) / 0.75);
+}
+
+.dark {
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+/**
+ * Colors: Borders
+ *
+ * - `divider`: This is used for separators. This is used to divide sections
+ *   within the same components, such as having separator on "h2" heading.
+ *
+ * - `border`: This is designed for borders on interactive components.
+ *   For example this should be used for a button outline.
+ *
+ * - `gutter`: This is used to divide components in the page. For example
+ *   the header and the lest of the page.
+ * -------------------------------------------------------------------------- */
+ :root {
+  --vp-c-border: rgb(var(--jordy-blue-300));
+  --vp-c-divider: rgb(var(--jordy-blue-300));
+  --vp-c-gutter: rgb(var(--jordy-blue-300));
+}
+
+.dark {
+  --vp-c-border: #3c3f44;
+  --vp-c-divider: rgb(var(--jordy-blue-300));
+   /* #2e2e32; */
+  --vp-c-gutter: #000000;
+}
+
+/**
+ * Colors: Text
+ *
+ * - `text-1`: Used for primary text.
+ *
+ * - `text-2`: Used for muted texts, such as "inactive menu" or "info texts".
+ *
+ * - `text-3`: Used for subtle texts, such as "placeholders" or "caret icon".
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-text-1: rgb(var(--creole-950));
+  --vp-c-text-2: rgb(var(--creole-950) / 0.78);
+  --vp-c-text-3: rgb(var(--creole-950) / 0.56);
+}
+
+.dark {
+  --vp-c-text-1: rgba(255, 255, 245, 0.86);
+  --vp-c-text-2: rgba(235, 235, 245, 0.6);
+  --vp-c-text-3: rgba(235, 235, 245, 0.38);
+}
+
+/**
+ * Colors: Function
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attached to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ *
+ * To understand the scaling system, refer to "Colors: Palette" section.
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-default-1: rgb(var(--big-stone-400));
+  --vp-c-default-2: rgb(var(--big-stone-600));
+  --vp-c-default-3: rgb(var(--big-stone-500));
+  --vp-c-default-soft: rgb(var(--big-stone-200) / 0.5);
+
+  --vp-c-brand-1: rgb(var(--shamrock-400));
+  --vp-c-brand-2: rgb(var(--shamrock-600));
+  --vp-c-brand-3: rgb(var(--shamrock-500));
+  --vp-c-brand-soft: rgb(var(--shamrock-200) / 0.5);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+ :root {
+  --vp-code-copy-code-hover-bg: rgb(var(--jordy-blue-200));
+  --vp-code-bg: rgb(var(--big-stone-500));
+  --vp-code-color: rgb(var(--shamrock-200));
+ }
+ .dark {
+  --vp-code-copy-code-hover-bg: rgb(var(--jordy-blue-900));
+  --vp-code-bg: rgb(var(--big-stone-600));
+  --vp-code-color: var(--vp-c-brand-1);
+ }
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #bd34fe 30%,
+    #41d1ff
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #bd34fe 50%,
+    #47caff 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-nav-bg-color: rgb(var(--jordy-blue-400));
+}
+.VPNavBar {
+  background-color: var(--vp-nav-bg-color);
+  border-bottom-color: transparent !important;
+}
+.dark {
+  --vp-nav-bg-color: rgb(var(--big-stone-950));
+}
+.DocSearch.DocSearch-Button {
+  background-color: rgb(var(--jordy-blue-300));
+}
+.dark .DocSearch.DocSearch-Button {
+  background-color: transparent;
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Search
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-local-search-bg: rgb(var(--jordy-blue-100));
+}
+.dark {
+  --vp-local-search-bg: rgb(var(--jordy-blue-900));
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+
+
+.v-gradient {
+  background: rgba(var(--shamrock-500));
+  background: linear-gradient(0deg, rgba(var(--shamrock-500)) 0%, rgba(var(--jordy-blue-500)) 100%);
+  border: none;
+  border-radius: 4px;
+  width: 3px;
+}
+
+/**
+/ * Overrides
+ * -------------------------------------------------------------------------- */
+ .VPNavBarTitle .title {
+  border-bottom: none;
+}
+
+.vp-doc p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+.vp-doc h2 {
+  border-top: none;
+  margin: 0;
+  padding-bottom: 4px;
+}
+.vp-doc h2 .header-anchor {
+  top: 24px;
+}
+.vp-doc h3 {
+  padding-bottom: 4px;
+}
+
+.aside-curtain {
+  /* Hide as it clips the footer on scroll */
+  display: none;
+}
