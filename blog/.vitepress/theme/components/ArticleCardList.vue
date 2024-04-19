@@ -1,10 +1,14 @@
-<script setup>
+<script setup lang="ts">
   import ArticleCard from './ArticleCard.vue'
   import { data as articles } from './../index.data.ts'
+
+  const props = defineProps<{
+    classes?: string,
+  }>()
 </script>
 
 <template>
-  <div class="flex flex-wrap justify-center gap-y-4 w-full">
+  <div class="flex flex-wrap justify-center gap-y-4 w-full" :class="classes">
     <ArticleCard
       v-for="article in articles"
       :title="article.title"
