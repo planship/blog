@@ -506,15 +506,27 @@
   max-width: calc(var(--vp-layout-max-width) - 64px);
 }
 
-.VPNavBar {
-  @apply !pl-0;
+.VPNav .VPNavBar {
+  @apply px-0;
   @media screen(sm) {
-    @apply !pr-4;
+    @apply pr-4;
   }
   @media screen(lg) {
-    @apply !px-4;
+    @apply pl-0;
+    @apply pr-4;
   }
   @media screen(2xl) {
-    @apply !px-0;
+    @apply px-0;
   }
+
+  .container {
+    @apply max-w-full;
+
+    @media screen(2xl) {
+      max-width: calc(var(--vp-layout-max-width) - 64px);
+    }
+  }
+}
+.VPNavBar .VPNavBarHamburger {
+  width: 60px;
 }
