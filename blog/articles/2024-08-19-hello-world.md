@@ -1,9 +1,9 @@
 ---
 title: "Hello world: Why we're building Planship"
-date: 2024-04-09
+date: 2024-08-19
 description: Introducing Planship - optimized software packaging so you can sell more subscriptions, faster.
 author: Trent Peterson
-image: 2024-04-09-hello-world.jpeg
+image: 2024-08-19-hello-world.jpeg
 alt: An illustration of a person walking along a sidewalk with a trail of coins behind them
 ---
 
@@ -13,15 +13,16 @@ alt: An illustration of a person walking along a sidewalk with a trail of coins 
 ## The problem
 Software pricing and packaging is a forever project. In the early days of a business, it's not uncommon to change pricing dimensions multiple times in a short period. As time goes on, more features are added, new plan packages are introduced, and custom plans are created for enterprise customers. The pricing journey never ends.
 
-Over the past dozen years we built SaaS products at scrappy startups like AppThwack and Routegy and large enterprises like AWS. SaaS packaging and monetization strategies, both on the business side as well as the software side, consistently grew in complexity and frustration over time. Onboarding big customers required finance and engineering to get involved just to get started, pricing experimentation took longer and longer, and the code and data model became messier and messier.
+Over the past dozen years we built SaaS products at scrappy startups like AppThwack (Now AWS Device Farm) and Routegy and large enterprises like AWS. SaaS packaging and monetization strategies, both on the business and software side, consistently grew in complexity and frustration over time. Onboarding big customers required finance and engineering to get involved just to get started, pricing experimentation took longer and longer, and the code and data models became messier and messier.
 
-We lived with those frustrations, and, once we could afford the resources, built and maintained systems to manage tiers, plans, entitlements, metering, and provisioning in a more scalable way. While this sorta worked, it was a distraction from our core business and wasn't a one-off effort; it required maintenance and support just like any software effort, and it was never as full-featured as a dedicated product.
+Once we could afford the resources, we built and maintained systems to manage tiers, plans, entitlements, metering, and provisioning in a more scalable way. While this sorta worked, it was a distraction from our core business and wasn't a one-off effort; it required maintenance and support just like any software effort, and it was never as robust and full-featured as a dedicated product.
 
-Not only did we see this issue from every angle in our own companies, we heard from leaders and devs at other companies that this was a common pattern for them, too. We set out to help decision makers, sales, and devs at every software company by building Planship.
+We saw this issue from every angle in our own companies, and we heard from leaders and devs at other companies that this was a common pattern for them, too.
+
+That's why we built Planship: to help decision makers, sales, and devs at every software company optimize their pricing and packaging.
 
 ## What's Planship?
 Planship's a new service that helps you optimize software pricing and packaging so you can sell more subscriptions, faster. It provides guardrails and tooling for software plan packaging, dimensions, entitlements, metering, enterprise onboarding, upsell logic, experimentation, and a lot more.
-
 
 ### What Planship isn't
 What we don't do is billing, payments, invoicing, etc. We simply work alongside your existing implementation and providers (E.g. Stripe) and integrate with them where it makes sense. In this way you can separate billing from packaging and entitlements for ultimate flexibility.

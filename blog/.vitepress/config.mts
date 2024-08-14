@@ -47,7 +47,7 @@ export default defineConfig({
       language: 'en',
       image: 'https://planship.io/images/logo.png',
       favicon: `${hostname}/favicon.ico`,
-      copyright: 'Copyright 2023-present, Planship, Inc.'
+      copyright: '© 2024 Planship'
     })
 
     let posts = await createContentLoader('articles/*.md', {
@@ -97,7 +97,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Subscription logic and code simplified.',
-      copyright: '© 2024 Planship, Inc.'
+      copyright: '© 2024 Planship'
     }
   },
   transformHead: async ({ pageData }) => {

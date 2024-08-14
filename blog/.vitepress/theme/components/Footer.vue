@@ -15,12 +15,16 @@
     :class="{ 'has-sidebar': hasSidebar }"
   >
     <div class="container">
-      <img class="w-20 h-20 m-auto" src="/planship-logo-inward-square.svg" />
-      <h3 class="text-4xl font-extrabold bg-gradient-to-b from-jordy-blue-500 to-shamrock-400 inline-block text-transparent bg-clip-text">
-        Planship
-      </h3>
-      <p class="message mb-3">Subscription logic and <code class="text-shamrock-400">code</code> simplified.</p>
-      <p v-if="theme.footer.copyright" class="copyright" v-html="theme.footer.copyright"></p>
+      <a href="https://planship.io">
+        <img class="w-20 h-20 m-auto" src="/planship-logo-inward-square.svg" />
+        <h3 class="text-4xl font-extrabold bg-gradient-to-b from-jordy-blue-500 to-shamrock-400 inline-block text-transparent bg-clip-text">
+          Planship
+        </h3>
+      </a>
+      <p class="message mb-3">SaaS pricing and packaging, optimized.</p>
+      <p v-if="theme.footer.copyright" class="copyright">
+        {{theme.footer.copyright}} &bull; <a class="" href="https://planship.io/policies/privacy-policy">Privacy Policy</a> &bull; <a class="" href="https://planship.io/policies/terms-of-service">Terms of Service</a>
+      </p>
     </div>
   </footer>
 </template>
@@ -36,13 +40,13 @@
 }
 
 .VPFooter :deep(a) {
-  text-decoration-line: underline;
-  text-underline-offset: 2px;
+  @apply text-seashell-peach-50;
+  text-decoration-line: none;
   transition: color 0.25s;
 }
 
 .VPFooter :deep(a:hover) {
-  color: var(--vp-c-text-1);
+  @apply text-shamrock-400;
 }
 
 @media (min-width: 768px) {
