@@ -103,8 +103,8 @@ export default defineConfig({
   transformHead: async ({ pageData }) => {
     // Update head with page-specific props (besides title and description)
     const head: HeadConfig[] = []
-    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }])
-    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+    head.push(['meta', { property: 'og:title', content: pageData.title }])
+    head.push(['meta', { property: 'og:description', content: pageData.description }])
     // TODO: Handle other dynamic props like twitter:card, og:image, etc
     return head
   },
