@@ -7,16 +7,16 @@ image: 2024-09-26-naming-is-hard.jpeg
 alt: An illustration of a person walking along a sidewalk with a trail of coins behind them
 ---
 
-# Naming things is hard
+# Naming things is hard: SaaS pricing nomenclature edition
 <ArticleHeader />
 
-## Is it a plan, tier, edition, or something else?
+## What do you mean by *plan*?
 
 Since we set out to build Planship we’ve talked to A LOT of teams responsible for pricing SaaS products. Just in the first 10 calls we discovered that different teams often use different names for the same pricing concepts. For instance, in the world of recurring subscriptions, what do you call an individual offering that a customer can subscribe to? Is it a ***plan***? Or is it a ***tier***, a ***package***, a ***product***, a ***level***, an ***edition***, or just ***pricing***? Similarly, what do you call a feature that has variable availability across different plans (or tiers, packages, products, etc.)? Is it a ***pricing dimension***, ***differentiator***, ***entitlement***, ***lever***, or ***limit***?
 
-## How to name key concepts?
+## What to call key SaaS pricing concepts
 
-The lack of standardized pricing nomenclature makes communicating with customers a little more tricky, but it also leads to a bigger question: How do we name key concepts in Planship so that it’s immediately apparent what they mean and do?
+The lack of standardized pricing nomenclature makes communicating with customers a little more tricky, but it also leads to a bigger question: How do we name key concepts in Planship so that it’s immediately apparent what they mean and do? Let’s take a look at some of the terms we’ve encountered and what we call them in Planship.
 
 ### Plans
 
