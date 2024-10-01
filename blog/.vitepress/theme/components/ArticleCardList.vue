@@ -15,8 +15,8 @@
       :href="article.url"
       :date="article.date.string"
       :author="article.author"
-      :image="article.image"
-      :alt="article.alt"
+      :imageFolder="article.imageFolder"
+      :coverAlt="article.coverAlt"
       :excerpt="article.excerpt"
     />
   </div>

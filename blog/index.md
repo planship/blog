@@ -1,6 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+layout: page
 title: Musings on SaaS pricing, subscription strategy, and code
 description: The official Planship blog
 ---

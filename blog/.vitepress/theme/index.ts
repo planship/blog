@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import type { Theme } from 'vitepress'
+import { useData, type Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import ArticleCard from './components/ArticleCard.vue'
 import ArticleCardList from './components/ArticleCardList.vue'
@@ -16,7 +16,8 @@ export default {
       'nav-bar-title-before': () => h(Logo),
       'nav-bar-content-after': () => h(CtaButton, { classes: 'ml-4 hidden md:block' }),
       'nav-screen-content-after': () => h(CtaButton, { classes: 'mt-4 w-full inline-block' }),
-      'footer-before': () => h(Divider)
+      'footer-before': () => h(Divider),
+      'doc-before': () => h(ArticleHeader)
     })
   },
   enhanceApp({ app, router, siteData }) {

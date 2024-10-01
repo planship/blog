@@ -3,12 +3,8 @@ title: "Naming things is hard: SaaS pricing nomenclature edition"
 date: 2024-09-26
 description: How we named key SaaS pricing concepts in Planship given the lack of standardized nomenclature.
 author: Pawel Wojnarowicz
-image: 2024-09-26-naming-is-hard.jpeg
-alt: An illustration of a person walking along a sidewalk with a trail of coins behind them
+cover_alt: An illustration of a robot holding a pencil, surrounded by question marks, deep in thought
 ---
-
-# Naming things is hard: SaaS pricing nomenclature edition
-<ArticleHeader />
 
 ## What do you mean by *plan*?
 

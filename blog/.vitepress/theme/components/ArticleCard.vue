@@ -4,8 +4,8 @@
   const props = defineProps<{
     title: string,
     excerpt: string,
-    image: string,
-    alt: string,
+    imageFolder: string,
+    coverAlt: string,
     date: string,
     author: string,
     href: string,
@@ -19,7 +19,7 @@
     <div class="">
       <div class="flex w-full">
         <div class="flex flex-shrink-0">
-          <img class="rounded w-24 h-24" :src="image" :alt="alt" />
+          <img class="rounded w-24 h-24" :src="`${imageFolder}/preview.jpg`" :alt="coverAlt" />
         </div>
         <div class="flex flex-col ml-4 justify-center">
           <h3 class="w-full text-xl font-bold">{{ title }}</h3>

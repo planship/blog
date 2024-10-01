@@ -4,11 +4,16 @@ import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
 import { defineConfig,
   createContentLoader,
+  loadEnv,
   type HeadConfig,
   type SiteConfig
 } from 'vitepress'
 
-const hostname: string = 'https://blog.planship.io'
+const env = loadEnv('', process.cwd())
+const hostname: string = env.VITE_HOSTNAME || 'http://localhost:5174'
+const planshipAssetsPath: string = env.VITE_PLANSHIP_ASSETS_PATH || ''
+const blogAssetsPath: string = env.VITE_BLOG_ASSETS_PATH || `${hostname}/images`
+
 const head: HeadConfig[] = [
   ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
   ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
@@ -34,7 +39,7 @@ export default defineConfig({
   description: 'Musings on SaaS pricing, subscription strategy, and code.',
   head,
   sitemap: {
-    hostname: 'https://blog.planship.io',
+    hostname
   },
   cleanUrls: true,
   buildEnd: async (config: SiteConfig) => {
@@ -45,8 +50,8 @@ export default defineConfig({
       id: hostname,
       link: hostname,
       language: 'en',
-      image: 'https://planship.io/images/logo.png',
-      favicon: `${hostname}/favicon.ico`,
+      image: `${planshipAssetsPath}/planship-logo.png`,
+      favicon: `${planshipAssetsPath}/favicon.ico`,
       copyright: '© 2024 Planship'
     })
 
@@ -96,16 +101,38 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/planship' }
     ],
     footer: {
-      message: 'Subscription logic and code simplified.',
+      message: 'SaaS pricing and packaging, optimized.',
       copyright: '© 2024 Planship'
     }
   },
   transformHead: async ({ pageData }) => {
     // Update head with page-specific props (besides title and description)
     const head: HeadConfig[] = []
-    head.push(['meta', { property: 'og:title', content: pageData.title }])
+    const pathWithoutExtension = pageData.relativePath.substring(0, pageData.relativePath.lastIndexOf('.'))
+
+    // Type
+    head.push(['meta', { property: 'og:type', content: 'website' }])
+
+    // Description
     head.push(['meta', { property: 'og:description', content: pageData.description }])
-    // TODO: Handle other dynamic props like twitter:card, og:image, etc
+
+    // URL
+    const url = pageData.relativePath !== 'index.md' ?
+      `${hostname}/${pathWithoutExtension}`
+      : hostname
+    head.push(['meta', { property: 'og:url', content: url }])
+
+    // Image
+    const coverPath = pageData.relativePath.startsWith('articles/') ?
+      `${pathWithoutExtension}/cover.jpg`
+      : 'planship-blog-og-landscape.jpg'
+    const image = `${blogAssetsPath}/${coverPath}`
+    const imageAlt = pageData.frontmatter.cover_alt || 'The Planship boat logo above the text \'The Planship Blog - Musings on SaaS pricing, packaging, and code.\''
+
+    head.push(['meta', { property: 'og:image', content: image }])
+    head.push(['meta', { property: 'og:image:alt', content: imageAlt }])
+    head.push(['meta', { property: 'twitter:card', content: 'summary_large_image' }])
+
     return head
   },
   vite: {

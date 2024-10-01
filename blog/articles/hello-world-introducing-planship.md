@@ -3,12 +3,8 @@ title: "Hello world: Why we're building Planship"
 date: 2024-08-19
 description: Introducing Planship - optimized software packaging so you can sell more subscriptions, faster.
 author: Trent Peterson
-image: 2024-08-19-hello-world.jpeg
-alt: An illustration of a person walking along a sidewalk with a trail of coins behind them
+cover_alt: An illustration of a robot waving hello while standing on a boat floating in a sea of money
 ---
-
-# Hello World: Why we're building Planship
-<ArticleHeader />
 
 ## The problem
 Software pricing and packaging is a forever project. In the early days of a business, it's not uncommon to change pricing dimensions multiple times in a short period. As time goes on, more features are added, new plan packages are introduced, and custom plans are created for enterprise customers. The pricing journey never ends.

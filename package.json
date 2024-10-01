@@ -18,9 +18,10 @@
     }
   },
   "scripts": {
-    "blog:dev": "NODE_ENV=development vitepress dev blog --port 5174",
-    "blog:build": "vitepress build blog",
-    "blog:preview": "vitepress preview blog"
+    "blog:dev": "cp .env ./blog/.env && NODE_ENV=development vitepress dev blog --port 5174",
+    "blog:build": "cp .env ./blog/.env && vitepress build blog",
+    "blog:build-prod": "vitepress build blog",
+    "blog:preview": "vitepress preview blog --port 5174"
   },
   "type": "module"
 }

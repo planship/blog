@@ -1,5 +1,8 @@
-import { createContentLoader } from 'vitepress'
+import { createContentLoader, loadEnv } from 'vitepress'
 import { formatDate, truncateText } from './helpers/helpers'
+
+const env = loadEnv('', process.cwd())
+const articleAssetsPath = env.VITE_BLOG_ASSETS_PATH || '/images'
 
 export default createContentLoader('articles/*.md', {
   excerpt: true,
@@ -10,8 +13,8 @@ export default createContentLoader('articles/*.md', {
         url,
         excerpt: truncateText(frontmatter.description, 100),
         date: formatDate(frontmatter.date),
-        image: frontmatter?.image ? `images/${frontmatter.image}` : getImagePath(url),
-        alt: frontmatter?.alt || `Illustration of ${frontmatter.title}`,
+        imageFolder: `${articleAssetsPath}${url}`,
+        coverAlt: frontmatter?.cover_alt || `Illustration of ${frontmatter.title}`,
         author: frontmatter.author,
         draft: frontmatter.draft
       }))
@@ -19,15 +22,3 @@ export default createContentLoader('articles/*.md', {
       .sort((a, b) => b.date.time - a.date.time)
   }
 })
-
-// function truncateText(text: string, length: number) {
-//   if (text.length > length) {
-//     return text.substring(0, length) + '...'
-//   }
-//   return text
-// }
-
-function getImagePath(url: string) {
-  const filename = url.split('/').slice(-1)[0].split('.')[0]
-  return filename + '.png'
-}
