@@ -7,6 +7,7 @@ import ArticleHeader from './components/ArticleHeader.vue'
 import CtaButton from './components/CtaButton.vue'
 import Divider from './components/Divider.vue'
 import Logo from './components/Logo.vue'
+import SiteTitle from './components/SiteTitle.vue'
 import './css/style.css'
 
 export default {
@@ -14,6 +15,7 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-title-before': () => h(Logo),
+      'nav-bar-title-after': () => h(SiteTitle),
       'nav-bar-content-after': () => h(CtaButton, { classes: 'ml-4 hidden md:block' }),
       'nav-screen-content-after': () => h(CtaButton, { classes: 'mt-4 w-full inline-block' }),
       'footer-before': () => h(Divider),

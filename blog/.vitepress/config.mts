@@ -143,6 +143,12 @@ export default defineConfig({
           replacement: fileURLToPath(
             new URL('./theme/components/Footer.vue', import.meta.url)
           )
+        },
+        {
+          find: /^.*\/VPNavBarTitle\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/NavBarTitle.vue', import.meta.url)
+          )
         }
       ]
     }

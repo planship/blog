@@ -6,7 +6,7 @@
     <img
       class="VPImage logo !m-0"
       src="/planship-logo.svg"
-      alt="Illustration of a ship with a crane hoisting a shipping container"
+      alt="Planship logo depicting a cargo ship with a crane hoisting a shipping container"
     />
   </a>
 </template>

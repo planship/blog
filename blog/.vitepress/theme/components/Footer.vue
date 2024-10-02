@@ -16,7 +16,7 @@
   >
     <div class="container">
       <a href="https://planship.io">
-        <img class="w-20 h-20 m-auto" src="/planship-logo-inward-square.svg" />
+        <img class="w-20 h-20 m-auto" src="/planship-logo-inward-square.svg" alt="Planship logo depicting a cargo ship with a crane hoisting a shipping container">
         <h3 class="text-4xl font-extrabold bg-gradient-to-b from-jordy-blue-500 to-shamrock-400 inline-block text-transparent bg-clip-text">
           Planship
         </h3>
