@@ -102,7 +102,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'SaaS pricing and packaging, optimized.',
-      copyright: '© 2024 Planship'
+      copyright: '© 2024 Bigger Ship LLC'
     }
   },
   transformHead: async ({ pageData }) => {
