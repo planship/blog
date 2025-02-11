@@ -72,4 +72,4 @@ Subscription pricing eventually returned in the form of dedicated devices. In th
 <hr class="gradient rounded !mt-8" />
 
 ## Looking for help with SaaS pricing and packaging?
-Pricing optimization is not easy. Without the right tools, building the infrastructure to iterate on packaging, dimensions, entitlements, and metering can be a serious distraction from your core business. We learned this lesson in our previous endeavors, and this is why we built Planship  To get started, please sign up [here](https://planship.io) or [shoot us an email](mailto:connect@planship.io). Don't hesitate to reach out! We're here to help you get up and running.
+Pricing optimization is not easy. Without the right tools, building the infrastructure to iterate on packaging, dimensions, entitlements, and metering can be a serious distraction from your core business. We learned this lesson in our previous endeavors, and this is why we built Planship. To get started, please sign up [here](https://planship.io) or [shoot us an email](mailto:connect@planship.io). Don't hesitate to reach out! We're here to help you get up and running.
