@@ -8,6 +8,7 @@ import CtaButton from './components/CtaButton.vue'
 import Divider from './components/Divider.vue'
 import Logo from './components/Logo.vue'
 import SiteTitle from './components/SiteTitle.vue'
+import Image from './components/Image.vue'
 import './css/style.css'
 
 export default {
@@ -25,6 +26,7 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component('ArticleCard', ArticleCard),
     app.component('ArticleCardList', ArticleCardList),
-    app.component('ArticleHeader', ArticleHeader)
+    app.component('ArticleHeader', ArticleHeader),
+    app.component('Image', Image)
   }
 } satisfies Theme
