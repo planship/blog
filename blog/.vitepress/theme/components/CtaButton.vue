@@ -15,10 +15,10 @@
 
 <template>
   <a
-    :class="`text-center rounded-lg bg-primary-gradient hover:bg-sunset-orange-600 hover:bg-none font-bold hover:bg-shamrock-500 p-2 text-seashell-peach-50 ${classes}`"
+    :class="`text-center font-semibold rounded-lg bg-primary-gradient hover:bg-sunset-orange-600 hover:bg-none hover:bg-shamrock-500 p-2 text-seashell-peach-50 ${classes}`"
     href="https://planship.io"
     target="_self"
   >
-    Try Planship!
+    Optimize your pricing
   </a>
 </template>
