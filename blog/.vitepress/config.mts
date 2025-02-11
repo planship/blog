@@ -52,7 +52,7 @@ export default defineConfig({
       language: 'en',
       image: `${planshipAssetsPath}/planship-logo.png`,
       favicon: `${planshipAssetsPath}/favicon.ico`,
-      copyright: '© 2024 Planship'
+      copyright: '© 2025 Planship'
     })
 
     let posts = await createContentLoader('articles/*.md', {
@@ -102,7 +102,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'SaaS pricing and packaging, optimized.',
-      copyright: '© 2024 Bigger Ship LLC'
+      copyright: '© 2025 Bigger Ship LLC'
     }
   },
   transformHead: async ({ pageData }) => {
