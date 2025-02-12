@@ -534,3 +534,7 @@
 .VPNavBar .VPNavBarHamburger {
   width: 60px;
 }
+
+.DocSearch-Button {
+  @apply rounded;
+}
