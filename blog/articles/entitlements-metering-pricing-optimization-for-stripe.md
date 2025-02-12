@@ -19,7 +19,7 @@ While Stripe handles the billing and payment side of things in an elegant fashio
 
 Enter Planship.
 
-Planship is payment-processor agnostic and adds complementary functionality to Stripe. Before today, you could use Planship with Stripe, but it involved setting up webhooks and performing any desired synchronization yourself. With the launch of our new [Planship app in the Stripe marketplace](https://marketplace.stripe.com/apps/planship), using Planship with Stripe has never been easier.
+Planship is payment-processor agnostic and adds complementary functionality to Stripe. Before today, you could use Planship with Stripe, but it involved setting up webhooks and performing any desired synchronization yourself. With the launch of our new [Planship app in the Stripe Marketplace](https://marketplace.stripe.com/apps/planship), using Planship with Stripe has never been easier.
 
 But first, why should you use Planship with Stripe?
 
@@ -36,7 +36,7 @@ Planship offers a wide range of highly configurable lever types: flags, enums, l
 ### Metering aggregation
 If your product has metered resources, regardless of whether you're using [pay-as-you-go pricing or tiered limits](https://blog.planship.io/articles/which-usage-based-pricing-model-is-right-for-your-saas-business#how-do-i-choose-the-right-model), you will likely need to gate behavior and functionality based on up-to-date information.
 
-While Stripe provides functionality for aggregating metering records for billing, there is no functionality for consuming the records and aggregated totals within your product.
+While Stripe provides functionality for aggregating metering records for usage-based pricing, there is no functionality for consuming the records and aggregated totals within your product.
 
 With Planship, metering records can be aggregated (and sub-aggregated) for consumption within your product (E.g. enforcing limits, displaying real-time totals, warning of overages, driving upsells). The metering records can then be fed into Stripe for billing purposes, either in real-time, relying on Stripe's aggregation features, or in batch amounts aggregated by Planship.
 
@@ -53,14 +53,14 @@ Using Planship's always-up-to-date entitlements within your product, you can dis
 ## Why you shouldn't use your billing system for entitlements
 While it may seem convenient, tying your entitlement system to your billing system is a recipe for pain.
 
-Arnon Shimoni has an excellent article that goes into great detail on this topic: [You Should Separate Your Billing from Entitlements](https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/)
+Arnon Shimoni has an excellent article that goes into great detail on this topic: [You Should Separate Your Billing from Entitlements](https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/).
 
 In addition to Arnon’s points, and specific to Stripe Entitlements and other payment-processors' solutions, what happens when you have a customer who uses a payment system outside of your billing system (E.g. a custom contract paid via ACH or Wire Transfer)? Essentially, how do you handle a customer within your product who doesn’t exist in your normal payment processor’s system?
 
 Planship makes it simple to keep your billing and entitlement systems separate, while also avoiding the development effort and ongoing support of building an entitlement system and integrating it with your billing system yourself.
 
-## Introducing the Planship App in the Stripe Marketplace
-With our new [Planship App in the Stripe Marketplace](https://marketplace.stripe.com/apps/planship), you can easily combine Stripe’s billing functionality with Planship’s entitlement functionality.
+## Introducing the Planship app in the Stripe Marketplace
+With our new [Planship app in the Stripe Marketplace](https://marketplace.stripe.com/apps/planship), you can easily combine Stripe’s billing functionality with Planship’s entitlement functionality.
 
 <Image
   src="planship-entitlements-stripe-dashboard.jpg"
@@ -90,4 +90,6 @@ Ready to optimize your pricing? Planship offers a generous [free tier](https://p
 <hr class="gradient rounded !mt-8" />
 
 ## Looking for help with SaaS pricing and packaging?
-Pricing optimization is not easy. Without the right tools, building the infrastructure to iterate on packaging, dimensions, entitlements, and metering can be a serious distraction from your core business. We learned this lesson the hard way in our previous companies, and that's why we built Planship. To get started, please sign up [here](https://planship.io) or [shoot us an email](mailto:connect@planship.io) for a demo. Don't hesitate to reach out! We're here to help you get up and running.
+Pricing optimization is not easy. Without the right tools, building the infrastructure to iterate on packaging, dimensions, entitlements, and metering can be a serious distraction from your core business. We learned this lesson the hard way in our previous companies, and that's why we built Planship. To get started, please sign up [here](https://planship.io) or [email us](mailto:connect@planship.io) for a demo. We can even help with price and package modeling.
+
+Don't hesitate to reach out! We're here to help you get up and running.
