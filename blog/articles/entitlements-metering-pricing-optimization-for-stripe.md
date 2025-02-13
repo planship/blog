@@ -1,6 +1,6 @@
 ---
 title: Entitlements, metering, and pricing optimization for Stripe
-date: 2025-02-12
+date: 2025-02-13
 description: Enable entitlements, metering, and pricing optimization with the Planship app for Stripe.
 author: Trent Peterson
 cover_alt: The Planship logo and Stripe logo with a red plus sign between them on a dark blue background
